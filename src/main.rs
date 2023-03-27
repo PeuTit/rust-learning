@@ -5,13 +5,13 @@ use rand::Rng;
 fn main() {
     println!("Guess the number!");
 
-    let random_number = rand::thread_rng().gen_range(0..=100);
+    let random_number: i32 = rand::thread_rng().gen_range(0..=100);
 
     loop {
         println!("Please input your guess:");
 
-        let mut guess = String::new();
-        let msg = "No guess";
+        let mut guess: String = String::new();
+        let msg: &str = "No guess";
 
         io::stdin()
             .read_line(&mut guess)
