@@ -1,15 +1,43 @@
 use std::{io, cmp::Ordering};
+use std::fs::File;
 use rand::Rng;
 use crate::rectangle::Rectangle;
+//use crate::guess::guess::Guess;
 //use crate::collections_exercises::collections_exercises::foo;
-use crate::hash_maps_vectors_exercises::hash_maps_vectors_exercises::foo;
+//use crate::hash_maps_vectors_exercises::hash_maps_vectors_exercises::foo;
+use crate::generics_exercises::generics_exercises::foo;
 
 pub mod rectangle;
 pub mod collections_exercises;
 pub mod hash_maps_vectors_exercises;
+pub mod guess;
+pub mod generics_exercises;
 
 fn main() {
     foo();
+}
+
+fn _open_file() {
+    let _greeting_file = File::open("bonjour.txt").expect("bonjour.txt should be included in the project root folder!");
+
+    let greeting_file_result = File::open("hello.txt");
+
+    let greeting_file_result = match greeting_file_result {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            io::ErrorKind::NotFound => {
+                match File::create("hello.txt") {
+                    Ok(fc) => fc,
+                    Err(e) => panic!("Problem creating the file: {:?}", e)
+                }
+            }
+            other_error => {
+                panic!("Problem opening the file: {:?}", other_error);
+            }
+        }
+    };
+
+    println!("{:?}", greeting_file_result.metadata());
 }
 
 fn _rectangle() {
