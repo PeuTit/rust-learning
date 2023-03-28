@@ -1,10 +1,12 @@
 use std::{io, cmp::Ordering};
 use rand::Rng;
 use crate::rectangle::Rectangle;
-use crate::collections_exercises::collections_exercises::foo;
+//use crate::collections_exercises::collections_exercises::foo;
+use crate::hash_maps_vectors_exercises::hash_maps_vectors_exercises::foo;
 
 pub mod rectangle;
 pub mod collections_exercises;
+pub mod hash_maps_vectors_exercises;
 
 fn main() {
     foo();
