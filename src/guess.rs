@@ -1,6 +1,6 @@
 pub mod guess {
     pub struct Guess {
-        value:i32,
+        value: i32,
     }
 
     impl Guess {

@@ -90,7 +90,7 @@ pub mod collections_exercises {
 
 #[cfg(test)]
 mod test {
-    use super::collections_exercises::{median_float, avg_val_float, median_int, avg_val_int};
+    use super::collections_exercises::{avg_val_float, avg_val_int, median_float, median_int};
     use ordered_float::OrderedFloat;
 
     #[test]
@@ -117,7 +117,7 @@ mod test {
         assert_eq!(Some(&OrderedFloat(6.0)), median_float(&mut v));
         assert_eq!(Some(&OrderedFloat(6.0)), median_float(&mut v2));
     }
-    
+
     #[test]
     fn test_avg_value_float() {
         let x: f64 = 5.0;
@@ -128,29 +128,14 @@ mod test {
 
     #[test]
     fn test_median_int() {
-        let mut v: Vec<i64> = vec![
-            12,
-            5,
-            6,
-            89,
-            5,
-            2390,
-            1,
-        ];
+        let mut v: Vec<i64> = vec![12, 5, 6, 89, 5, 2390, 1];
 
-        let mut v2: Vec<i64> = vec![
-            12,
-            5,
-            7,
-            89,
-            5,
-            1,
-        ];
+        let mut v2: Vec<i64> = vec![12, 5, 7, 89, 5, 1];
 
         assert_eq!(Some(&6), median_int(&mut v));
         assert_eq!(Some(&6), median_int(&mut v2));
     }
-    
+
     #[test]
     fn test_avg_value_int() {
         let x: i64 = 5;
