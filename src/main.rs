@@ -6,15 +6,18 @@ use std::{cmp::Ordering, io};
 //use crate::collections_exercises::collections_exercises::foo;
 //use crate::hash_maps_vectors_exercises::hash_maps_vectors_exercises::foo;
 use crate::generics_exercises::generics_exercises::foo;
+use crate::ownership_exercises::ownership_exercises::bar;
 
 pub mod collections_exercises;
 pub mod generics_exercises;
 pub mod guess;
 pub mod hash_maps_vectors_exercises;
+pub mod ownership_exercises;
 pub mod rectangle;
 
 fn main() {
     foo();
+    bar();
 }
 
 fn _open_file() {
