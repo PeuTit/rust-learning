@@ -15,9 +15,57 @@ pub mod hash_maps_vectors_exercises;
 pub mod ownership_exercises;
 pub mod rectangle;
 
+enum Color {
+    Rgb(i32, i32, i32),
+    Hsv(i32, i32, i32),
+}
+
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(Color),
+}
+
 fn main() {
-    foo();
-    bar();
+    // foo();
+    // bar();
+
+    let msg1 = Message::Quit;
+    let msg2 = Message::Move { x: 2, y: 4 };
+    let msg3 = Message::Write(String::from("A nice string"));
+    let msg4 = Message::ChangeColor(Color::Rgb(13, 45, 99));
+    let msg5 = Message::ChangeColor(Color::Hsv(87, 234, 40));
+
+    match_messages(msg1);
+    match_messages(msg2);
+    match_messages(msg3);
+    match_messages(msg4);
+    match_messages(msg5);
+}
+
+fn match_messages(message: Message) {
+    match message {
+        Message::Quit => {
+            println!("No value returned");
+        }
+        Message::Move { x, y } => {
+            println!("{x}, {y}");
+        }
+        Message::Write(text) => {
+            println!("{text}");
+        }
+        Message::ChangeColor(color) => {
+            match color {
+                Color::Rgb(r, g, b) => {
+                    println!("{r}, {g}, {b}");
+                }
+                Color::Hsv(h, s, v) => {
+                    println!("{h}, {s}, {v}");
+                }
+            }
+        }
+    }
 }
 
 fn _open_file() {
